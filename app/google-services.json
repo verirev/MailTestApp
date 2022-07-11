@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "496127441526",
+    "project_id": "mailtestapp-81b78",
+    "storage_bucket": "mailtestapp-81b78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496127441526:android:2b5937fe9a355c59edbd57",
+        "android_client_info": {
+          "package_name": "com.majd_alden.mailtestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496127441526-kv6p74gfqniog3f04j708q8en4j4f98r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.majd_alden.mailtestapp",
+            "certificate_hash": "6c167f93105cd90e2861a129244f8f3702ffe934"
+          }
+        },
+        {
+          "client_id": "496127441526-98aiamb39pfj4ornv4ealc60spcrgmft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGOjMhd4HcTzoeg3S7wEmQCkTT7n0HhVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496127441526-98aiamb39pfj4ornv4ealc60spcrgmft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

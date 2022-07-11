@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MailTestApp</string>
+    <string name="from">from</string>
+    <string name="from_">from: </string>
+    <string name="to">To</string>
+    <string name="message_body">Message Body</string>
+    <string name="send">Send</string>
+    <string name="sign_by_google">Sign by Google</string>
+</resources>
