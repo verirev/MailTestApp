@@ -1,6 +1,5 @@
 package com.majd_alden.mailtestapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -49,6 +49,7 @@ public class SignActivity extends AppCompatActivity {
                     String email = Utils.signByGoogleBtn(this);
                     Log.e("MTA_SignActivity_TAG", "email: " + email);
                     startActivity(new Intent(this, MainActivity.class));
+                    finish();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

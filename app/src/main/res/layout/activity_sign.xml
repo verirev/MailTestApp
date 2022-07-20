@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +8,14 @@
     android:padding="16dp"
     tools:context=".SignActivity">
 
-    <com.google.android.material.button.MaterialButton
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/signByGoogleBtn"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:id="@+id/signByGoogleBtn"
         android:text="@string/sign_by_google"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:backgroundTint="@color/teal_700" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>

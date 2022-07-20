@@ -1,14 +1,15 @@
 package com.majd_alden.mailtestapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.services.gmail.model.Message;
@@ -51,16 +52,29 @@ public class MainActivity extends AppCompatActivity {
             handlerThreadSendMail.start();
             Handler handlerSendMail = new Handler(handlerThreadSendMail.getLooper());
 
-            handlerSendMail.post(() -> {
-                try {
-                    Message message = mail.createMessageWithEmail();
-
-                    String messageId = Utils.sendEmail(this, message);
-                    Log.e("MTA_MainActivity_TAG", "messageId: " + message.getId() + ", messageId: " + messageId);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
+            Looper mainLooper = Looper.getMainLooper();
+            if (mainLooper != null) {
+                new Handler(mainLooper).post(() -> {
+                    try {
+                        Message message = mail.createMessageWithEmail();
+                        handlerSendMail.post(() -> {
+                            try {
+                                String messageId = Utils.sendEmail(MainActivity.this, message);
+                                new Handler(mainLooper).post(() -> {
+                                    toET.setText("");
+                                    messageET.setText("");
+                                    Toast.makeText(this, "Your mail has been sent", Toast.LENGTH_SHORT).show();
+                                });
+                                Log.e("MTA_MainActivity_TAG", "messageId: " + message.getId() + ", messageId: " + messageId);
+                            } catch (Throwable e) {
+                                e.printStackTrace();
+                            }
+                        });
+                    } catch (Throwable e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
         });
     }
 }
